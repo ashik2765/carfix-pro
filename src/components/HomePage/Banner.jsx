@@ -4,7 +4,7 @@ export default function Banner() {
 
     const banners = [
         {
-            title: "Affordable Price For Car Servicing",
+            title: "Awal Halader",
             description: "There are many variations of passages of  available, but the majority have suffered alteration in some form",
             next: "#slide2",
             prev: "#slide4"

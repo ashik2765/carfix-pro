@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/react'
 import React, { useEffect, useState } from 'react'
 import {toast } from 'react-toastify';
 
-const checkoutPage = ({ params }) => {
+const ChekoutPage = ({ params }) => {
     const { data } = useSession();
     const [service, setService] = useState([]);
 
@@ -33,7 +33,7 @@ const checkoutPage = ({ params }) => {
             facility
         }
         console.log("from targer", userInfo);
-        const res = await fetch('http://localhost:3000/checkout/api/newBooking', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/Chekout/api/newBooking`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -56,11 +56,11 @@ const checkoutPage = ({ params }) => {
         <div className="container mx-auto">
             <div className="min-h-screen bg-gray-50 flex flex-col items-center">
                 {/* Header Image */}
-                <div className="w-full h-60 bg-cover bg-center relative" style={{ backgroundImage: "url('/assets/images/checkout/checkout.png')" }}>
+                <div className="w-full h-60 bg-cover bg-center relative" style={{ backgroundImage: "url('/assets/images/Chekout/Chekout.png')" }}>
                     <div className="absolute inset-0 bg-black opacity-50"></div>
                     <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
                         <h1 className="text-4xl font-semibold">Check Out</h1>
-                        <p className="mt-2 text-sm">Home / Checkout</p>
+                        <p className="mt-2 text-sm">Home / Chekout</p>
                     </div>
                 </div>
 
@@ -115,4 +115,4 @@ const checkoutPage = ({ params }) => {
         </div>
     )
 }
-export default checkoutPage;
+export default ChekoutPage;

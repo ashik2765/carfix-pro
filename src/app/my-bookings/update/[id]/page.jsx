@@ -8,7 +8,7 @@ export default function page({ params }) {
     const [booking, setBooking] = useState([]);
 
     const loadBooking = async () => {
-        const bookingDetails = await fetch(`http://localhost:3000/my-bookings/api/bookings/${params?.id}`)
+        const bookingDetails = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/my-bookings/api/bookings/${params?.id}`)
         const loadData = await bookingDetails.json();
         setBooking(loadData)
     }
@@ -19,7 +19,7 @@ export default function page({ params }) {
             phone: e.target.phone.value,
             message: e.target.message.value,
         }
-        const res = await fetch(`http://localhost:3000/my-bookings/api/bookings/${params?.id}`,
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/my-bookings/api/bookings/${params?.id}`,
             {
                 method: "PATCH",
                 headers: {
@@ -44,7 +44,7 @@ export default function page({ params }) {
         <div className="container mx-auto">
             <div className="min-h-screen bg-gray-50 flex flex-col items-center">
                 {/* Header Image */}
-                <div className="w-full h-60 bg-cover bg-center relative" style={{ backgroundImage: "url('/assets/images/checkout/checkout.png')" }}>
+                <div className="w-full h-60 bg-cover bg-center relative" style={{ backgroundImage: "url('/assets/images/Chekout/Chekout.png')" }}>
                     <div className="absolute inset-0 bg-black opacity-50"></div>
                     <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
                         <h1 className="text-4xl font-semibold">Edit the service</h1>

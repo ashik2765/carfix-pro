@@ -1,5 +1,6 @@
 import { connectDB } from "@/lib/connectDB";
 import { ObjectId } from "mongodb";
+import { NextResponse } from "next/server";
 
 
 
@@ -8,7 +9,7 @@ export const DELETE = async (request, { params }) => {
     const bookingsCollection = await db.collection('bookings');
     try {
         const resp = await bookingsCollection.deleteOne({ _id: new ObjectId(params.id) });
-        return Response.json({ message: "deleted sucessfully", response: resp })
+        return NextResponse.json({ message: "deleted sucessfully", response: resp })
     } catch (error) {
         console.log(error)
     }
@@ -24,7 +25,7 @@ export const PATCH = async (request, { params }) => {
             { $set: {...updateDoc} },
             { upsert: true }
         );
-        return Response.json({ message: "update the booking", response: resp })
+        return NextResponse.json({ message: "update the booking", response: resp })
     } catch (error) {
         console.log(error)
     }
@@ -34,8 +35,8 @@ export const GET = async (request, { params }) => {
     const bookingsCollection = await db.collection('bookings');
     try {
         const resp = await bookingsCollection.findOne({ _id: new ObjectId(params.id) });
-        return Response.json({ message: "data found", data: resp })
+        return NextResponse.json({ message: "data found", data: resp })
     } catch (error) {
-        console.log(error)
+        return NextResponse.json({message:"no data found",error});
     }
 }

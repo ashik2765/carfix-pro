@@ -11,14 +11,14 @@ export default function page() {
     const [bookings, setBookings] = useState([])
 
     const loadData = async () => {
-        const res = await fetch(`http://localhost:3000/my-bookings/api/${session?.data?.user?.email}`)
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/my-bookings/api/${session?.data?.user?.email}`)
         const data = await res.json();
         setBookings(data?.myBookings)
     }
 
     const handleDeleteBooking = async (id) => {
         console.log("cliked", id)
-        const DBooking = await fetch(`http://localhost:3000/my-bookings/api/bookings/${id}`, {
+        const DBooking = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/my-bookings/api/bookings/${id}`, {
             method: "DELETE"
         })
         const resp = await DBooking.json();
@@ -39,7 +39,7 @@ export default function page() {
 
                 {/* Banner */}
                 <div className="bg-cover bg-center text-white text-center py-10" style={{
-                    backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/checkout/mybooking.png')"
+                    backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/Chekout/mybooking.png')"
                 }}>
                     <h2 className="text-3xl font-semibold">Cart Details</h2>
                     <p className="text-sm mt-2">Home &gt; Product Details</p>

@@ -24,7 +24,7 @@ const DetailsPage = async ({ params }) => {
             <section
                 className="relative w-full h-64 bg-no-repeat bg-cover bg-center"
                 style={{
-                    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/checkout/checkout.png')`
+                    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/Chekout/Chekout.png')`
                 }}
             >
                 {/* Centered Title */}
@@ -98,8 +98,8 @@ const DetailsPage = async ({ params }) => {
                     {/* Pricing */}
                     <div className="p-6 bg-white border rounded-lg">
                         <p className="text-2xl font-bold">Price ${price}</p>
-                        <Link href={`/checkout/${_id}`}>
-                            <button className="mt-4 w-full py-2 text-white bg-red-500 rounded-md">Proceed Checkout</button>
+                        <Link href={`/Chekout/${_id}`}>
+                            <button className="mt-4 w-full py-2 text-white bg-red-500 rounded-md">Proceed Chekout</button>
                         </Link>
                     </div>
                 </aside>
