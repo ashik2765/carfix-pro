@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react'
 import { FaTrash } from "react-icons/fa";
 import { IoArrowUndoSharp } from "react-icons/io5";
 
-export default function page() {
+export default function Page() {
     const session = useSession();
     const [bookings, setBookings] = useState([])
 

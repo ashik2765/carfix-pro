@@ -3,7 +3,7 @@ import { useSession } from 'next-auth/react'
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 
-export default function page({ params }) {
+export default function Page({ params }) {
     const { data } = useSession();
     const [booking, setBooking] = useState([]);
 
