@@ -38,7 +38,7 @@ export default function page({ params }) {
 
     useEffect(() => {
         loadBooking();
-    }, [params]);
+    }, [loadBooking]);
 
     return (
         <div className="container mx-auto">

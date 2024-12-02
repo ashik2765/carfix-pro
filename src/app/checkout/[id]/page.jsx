@@ -50,7 +50,7 @@ const ChekoutPage = ({ params }) => {
 
     useEffect(() => {
         loadService()
-    }, [params])
+    }, [loadService])
 
     return (
         <div className="container mx-auto">

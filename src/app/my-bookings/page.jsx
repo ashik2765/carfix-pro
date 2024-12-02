@@ -31,7 +31,7 @@ export default function page() {
 
     useEffect(() => {
         loadData();
-    }, [session]);
+    }, [loadData]);
 
     return (
         <div className="container mx-auto">
