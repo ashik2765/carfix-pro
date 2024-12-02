@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 export default function OurTeam() {
@@ -39,7 +40,8 @@ export default function OurTeam() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {teamMembers.map((member, index) => (
                             <div key={index} className="bg-white rounded-lg shadow-lg p-6 text-center">
-                                <img
+                                <Image
+
                                     src={member.image}
                                     alt={member.name}
                                     className="w-full h-48 object-cover rounded-lg mb-4"

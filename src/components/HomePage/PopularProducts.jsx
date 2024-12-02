@@ -1,10 +1,11 @@
 // Import necessary components if needed
+import Image from 'next/image';
 import React from 'react';
 
 const ProductCard = ({ name, price, imageSrc }) => {
   return (
     <div className="border rounded-lg shadow-sm hover:shadow-lg transition-shadow p-4 text-center">
-      <img src={imageSrc} alt={name} className="w-24 h-24 mx-auto mb-4" />
+      <Image src={imageSrc} alt={name} className="mx-auto mb-4" height={24} width={24}/>
       <h3 className="text-lg font-medium">{name}</h3>
       <p className="text-sm text-yellow-500 my-2">★★★★★</p>
       <p className="text-orange-500 font-semibold">${price}</p>
@@ -27,7 +28,7 @@ const PopularPage = () => {
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-orange-500 font-semibold mb-2">Popular Products</h2>
         <h1 className="text-3xl font-bold mb-4">Browse Our Products</h1>
-        <p className="text-gray-600 mb-10">The majority have suffered alteration in some form, by injected humour, or randomized words which don’t look even slightly believable.</p>
+        <p className="text-gray-600 mb-10">The majority have suffered alteration in some form, by injected humour, or randomized words which  look even slightly believable.</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {products.map((product, index) => (
